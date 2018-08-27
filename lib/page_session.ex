@@ -88,7 +88,7 @@ defmodule ChromeRemoteInterface.PageSession do
   """
   def execute_command(pid, method, params, opts) do
     async = Keyword.get(opts, :async, false)
-    timeout = Keyword.get(opts, :timeout, 30_000)
+    timeout = Keyword.get(opts, :timeout, 5_000)
 
     case async do
       false -> call(pid, method, params, timeout)
